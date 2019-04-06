@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Online Admission</title>
+    <title>Online Admission - Home</title>
     <!-- Bootstrap core CSS -->
     <link href="~/Content/Home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -17,61 +17,83 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Online Admission</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "Register")">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "Login")">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Portfolio
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                            <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-                            <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-                            <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                            <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                            <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Blog
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                            <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                            <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Other Pages
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                            <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="404.html">404</a>
-                            <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-                        </div>
-                    </li>
-                </ul>
+    @if (Session["studentlogin"] != null || Session["setterlogin"] != null || Session["adminlogin"] != null)
+    {
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Online Admission</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Logout", "Login")">Logout</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Portfolio
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                    <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                                </div>
+                            </li>*@
+
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    }
+    else
+    {
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Online Admission</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Register")">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Login")">Login</a>
+                        </li>
+                       
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Portfolio
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                    <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                                </div>
+                            </li>*@
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    }
+
     <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -81,25 +103,25 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-                    <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-item active" style="background-image: url('/Content/Images/aust.jpg')">
+                    @*<div class="carousel-caption d-none d-md-block">
                         <h3>First Slide</h3>
                         <p>This is a description for the first slide.</p>
-                    </div>
+                    </div>*@
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-                    <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-item" style="background-image: url('/Content/Images/aust2.jpg')">
+                    @*<div class="carousel-caption d-none d-md-block">
                         <h3>Second Slide</h3>
                         <p>This is a description for the second slide.</p>
-                    </div>
+                    </div>*@
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-                    <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-item" style="background-image: url('/Content/Images/aust3.jpg')">
+                    @*<div class="carousel-caption d-none d-md-block">
                         <h3>Third Slide</h3>
                         <p>This is a description for the third slide.</p>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -114,42 +136,32 @@
     </header>
     <!-- Page Content -->
     <div class="container">
-        <h1 class="my-4">Welcome to Modern Business</h1>
+        <h1 class="my-4">Welcome to ABC University</h1>
         <!-- Marketing Icons Section -->
         <div class="row">
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-6 mb-4">
                 <div class="card h-100">
                     <h4 class="card-header">Card Title</h4>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                        <p class="card-text">Our departments are the best.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-6 mb-4">
                 <div class="card h-100">
                     <h4 class="card-header">Card Title</h4>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+                        <p class="card-text">Take your Admission Test Online.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!-- /.row -->
         <!-- Portfolio Section -->
@@ -160,9 +172,9 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project One</a>
+                            <a href="#">CSE</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                        <p class="card-text">CSE</p>
                     </div>
                 </div>
             </div>
@@ -171,9 +183,9 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project Two</a>
+                            <a href="#">EEE</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                        <p class="card-text">EEE</p>
                     </div>
                 </div>
             </div>
@@ -182,9 +194,9 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project Three</a>
+                            <a href="#">TE</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+                        <p class="card-text">Textile Engineering</p>
                     </div>
                 </div>
             </div>
@@ -193,9 +205,9 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project Four</a>
+                            <a href="#">CE</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                        <p class="card-text">Civil Engineering</p>
                     </div>
                 </div>
             </div>
@@ -204,9 +216,9 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project Five</a>
+                            <a href="#">ME</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                        <p class="card-text">Mechanical Engineering</p>
                     </div>
                 </div>
             </div>
@@ -215,9 +227,9 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project Six</a>
+                            <a href="#">IPE</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+                        <p class="card-text">Industrial and prduction Engineering</p>
                     </div>
                 </div>
             </div>
@@ -226,18 +238,17 @@
         <!-- Features Section -->
         <div class="row">
             <div class="col-lg-6">
-                <h2>Modern Business Features</h2>
-                <p>The Modern Business template by Start Bootstrap includes:</p>
+                <h2>Why to choose ABC University</h2>
+                <p>ABC University provides:</p>
                 <ul>
                     <li>
-                        <strong>Bootstrap v4</strong>
+                        <strong>Wonderful Opportunities</strong>
                     </li>
-                    <li>jQuery</li>
-                    <li>Font Awesome</li>
-                    <li>Working contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
+                    <li>Great educational facilities</li>
+                    <li>Highly qualified faculties</li>
+                    <li>Modern curriculumn</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+                <p>We also provide proper housing facilites for all of our students</p>
             </div>
             <div class="col-lg-6">
                 <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
@@ -248,7 +259,7 @@
         <!-- Call to Action Section -->
         <div class="row mb-4">
             <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                <p> <h2>Apply now before it's too late!</h2> </p>
             </div>
             <div class="col-md-4">
                 <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>

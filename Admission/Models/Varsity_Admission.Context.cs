@@ -13,10 +13,10 @@ namespace Admission.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class VarsityAdmissionEntities : DbContext
+    public partial class Varsity_Admission : DbContext
     {
-        public VarsityAdmissionEntities()
-            : base("name=VarsityAdmissionEntities")
+        public Varsity_Admission()
+            : base("name=Varsity_Admission")
         {
         }
     
@@ -26,5 +26,9 @@ namespace Admission.Models
         }
     
         public virtual DbSet<Exam> Exams { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Setter> Setters { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }

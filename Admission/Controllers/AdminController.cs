@@ -11,7 +11,7 @@ namespace Admission.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            VarsityAdmissionEntities examEntity = new VarsityAdmissionEntities();
+            Varsity_Admission examEntity = new Varsity_Admission();
             var getYear = examEntity.Exams.ToList();
             SelectList list = new SelectList(getYear, "E_Id", "E_Year");
             ViewBag.year = list;
